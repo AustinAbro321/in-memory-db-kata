@@ -1,6 +1,5 @@
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Hiker {
 
@@ -49,10 +48,11 @@ public class Hiker {
         String insertPeople = 
             "insert into people(ID,full_name,email,country_id) values\n" + 
             "(1,'Austin Abro','Austin.Abro@stellantis.com',1),\n" + 
-            "(2,'Chris Gallivan','Chris.Gallivan@stellantis.com',1),\n" + 
+            "(2,'Chris Galivan','Chris.Gallivan@stellantis.com',1),\n" + 
             "(3,'Jackie Chan',null,1),\n" + 
             "(4,'Barry Bonds',null,2),\n" + 
-            "(5,'Bjarne Stroustrup',null,3);\n";
+            "(5,'Bjarne Stroustrup',null,3)," +
+            "(6,'Linus Torvalds','linus.torvalds@linux.org',1);\n";
         String insertSales = 
             "insert into sales(VIN,person_id,car_id,sale_date) VALUES\n" + 
             "(1,3,1,'2001-09-28'),\n" + 
@@ -95,31 +95,30 @@ public class Hiker {
         }
     }
 
-    public static String getCarName() {
-        String querySql = "select car_name from stellantis_cars where id = 1;";
+    public static String getPersonName() {
+        String querySql = "select full_name from people where id = 1;";
         try (Connection connection = DriverManager.getConnection(connectionString);
              Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(querySql);
-            return resultSet.getString("car_name");
+            return resultSet.getString("full_name");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     
-    public static List<String> getListOfEmails(){
-        String querySql = "select email from people where email is not null;";
-        List<String> emails = new ArrayList<String>();
+    public static String getPersonName(int id) {
+        String querySql = "select full_name from people where id = ?;";
         try (Connection connection = DriverManager.getConnection(connectionString);
-             Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(querySql);
-            while(resultSet.next()){
-                emails.add(resultSet.getString("email"));
-            }
-            return emails;
+             PreparedStatement statement = connection.prepareStatement(querySql);) {
+            statement.setInt(1,id);
+            ResultSet resultSet = statement.executeQuery();
+            return resultSet.getString("full_name");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+    
+
 
     private static String connectionString =
         "jdbc:sqlite:/sandbox/hiker.db";

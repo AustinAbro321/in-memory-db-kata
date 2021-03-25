@@ -1,7 +1,6 @@
 import org.junit.*;
 import static org.junit.Assert.*;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 public class HikerTest {
 
@@ -15,19 +14,17 @@ public class HikerTest {
     }
     
     @Test
-    public void checkCarName(){
-        String expected = "Jeep Cherokee";
-        String actual = Hiker.getCarName();
+    public void checkPersonNameByQuery(){
+        String expected = "Austin Abro";
+        String actual = Hiker.getPersonName();
         assertEquals(expected, actual);
     }
-        
+    
     @Test
-    public void checkEmailsWithoutNull(){
-        List<String> expected = new ArrayList<String>();
-        expected.add("Austin.Abro@stellantis.com");
-        expected.add("Chris.Gallivan@stellantis.com");
-        List<String> actual = Hiker.getListOfEmails();
-        Assert.assertEquals(expected,actual);
+    public void checkPersonNameById(){
+        String expected = "Austin Abro";
+        String actual = Hiker.getPersonName(1);
+        assertEquals(expected, actual);
     }
 
 }
