@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.*;
 
-public class Hiker {
+public class CarDb {
 
     public static void setup() {     
         String createCountries="create table if not exists countries(\n" + 

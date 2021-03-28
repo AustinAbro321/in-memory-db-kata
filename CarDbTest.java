@@ -2,28 +2,28 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.*;
 
-public class HikerTest {
+public class CarDbTest {
 
     @Before
     public void setup_earth() {
-        Hiker.setup();
+        CarDb.setup();
     }
     @After
     public void destroy(){
-        Hiker.tearDown();
+        CarDb.tearDown();
     }
     
     @Test
     public void checkPersonNameByQuery(){
         String expected = "Austin Abro";
-        String actual = Hiker.getPersonName();
+        String actual = CarDb.getPersonName();
         assertEquals(expected, actual);
     }
     
     @Test
     public void checkPersonNameById(){
         String expected = "Austin Abro";
-        String actual = Hiker.getPersonName(1);
+        String actual = CarDb.getPersonName(1);
         assertEquals(expected, actual);
     }
 
