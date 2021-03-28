@@ -1,10 +1,3 @@
-delete from sales;
-delete from stellantis_cars;
-delete from people;
-delete from countries;
-
-
-
 insert into countries (id,abbreviation,name) 
 values(1,'USA','United States of America'),
 (2,'NOR','Norway'),
@@ -18,7 +11,7 @@ insert into stellantis_cars(id,car_name,year) values
 (6,'Chrysler 300',2003),
 (7,'Alfa Romeo Giulia',2021);
 insert into people(ID,full_name,email,country_id) values
-(1,'Asutin Abro','Austin.Abro@stellantis.com',1),
+(1,'Austin Abro','Austin.Abro@stellantis.com',1),
 (2,'Chris Galivan','Chris.Gallivan@stellantis.com',1),
 (3,'Jackie Chan',null,1),
 (4,'Barry Bonds',null,2),

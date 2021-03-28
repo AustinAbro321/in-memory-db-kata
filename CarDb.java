@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.io.*;
 import java.util.*;
 
 public class CarDb {
@@ -13,7 +14,10 @@ public class CarDb {
             runner.runScript(new BufferedReader(new FileReader(insertFile)));
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }        
+        }
+          catch(IOException e){
+            System.out.println("File not found");
+        }
     }
     
     public static void tearDown(){
@@ -29,7 +33,7 @@ public class CarDb {
             statement.execute(deleteCountries);
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
+        }        
     }
 
     public static String getPersonName() {
