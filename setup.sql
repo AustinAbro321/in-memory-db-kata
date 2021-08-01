@@ -11,7 +11,7 @@ create table if not exists people(
     foreign key (country_id) references countries(id)
     on delete CASCADE
 );
-create table if not exists stellantis_cars(
+create table if not exists cars(
     ID int primary KEY,
     car_name varchar (100) not NULL,
     year INT not null
@@ -23,6 +23,6 @@ create table if not exists sales(
     sale_date DATE not null,
     foreign key (person_id) references people(id) 
     on delete CASCADE,
-    foreign key (car_id) REFERENCES stellantis_cars(id)
+    foreign key (car_id) REFERENCES cars(id)
     on delete CASCADE
 );

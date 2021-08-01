@@ -2,7 +2,7 @@ insert into countries (id,abbreviation,name)
 values(1,'USA','United States of America'),
 (2,'NOR','Norway'),
 (3,'SWE','Sweden');
-insert into stellantis_cars(id,car_name,year) values
+insert into cars(id,car_name,year) values
 (1,'Jeep Cherokee',2018),
 (2,'Jeep Cherokee',2017),
 (3,'Jeep Cherokee',2000),

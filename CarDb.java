@@ -1,6 +1,5 @@
 import java.sql.*;
 import java.io.*;
-import java.util.*;
 
 public class CarDb {
 
@@ -24,7 +23,7 @@ public class CarDb {
         String deleteCountries = "delete from countries;";
         String deleteSales = "delete from sales;";
         String deletePeople = "delete from people;";
-        String deleteCars = "delete from stellantis_cars";
+        String deleteCars = "delete from cars";
         try (Connection connection = DriverManager.getConnection(connectionString);
              Statement statement = connection.createStatement()) {
             statement.execute(deleteSales);
