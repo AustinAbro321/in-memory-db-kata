@@ -11,8 +11,8 @@ insert into cars(id,car_name,year) values
 (6,'Chrysler 300',2003),
 (7,'Alfa Romeo Giulia',2021);
 insert into people(ID,full_name,email,country_id) values
-(1,'Austin Abro','Austin.Abro@stellantis.com',1),
-(2,'Chris Galivan','Chris.Gallivan@stellantis.com',1),
+(1,'Austin Abro','austinabro321@gmail.com',1),
+(2,'Gojo Satoru','Gojo.Satoru@jjk.org',1),
 (3,'Jackie Chan',null,1),
 (4,'Barry Bonds',null,2),
 (5,'Bjarne Stroustrup',null,3),
