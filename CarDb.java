@@ -58,14 +58,14 @@ public class CarDb {
         }
     }
     
-    public static int insertPerson(int personId,String name,String email,int countryId) {
-        String querySql = "insert into people(ID,full_name,email,country_id) values (?,?,?,?)";
+    public static int insertPerson(String name,String email,int countryId) {
+        //Because of how SQL-lite works since our primary key is an integer it is automatically set if not specifed      
+        String querySql = "insert into people(full_name,email,country_id) values (?,?,?)";
         try (Connection connection = DriverManager.getConnection(connectionString);
              PreparedStatement statement = connection.prepareStatement(querySql);) {
-            statement.setInt(1,personId);
-            statement.setString(2,name);
-            statement.setString(3,email);
-            statement.setInt(4,countryId);
+            statement.setString(1,name);
+            statement.setString(2,email);
+            statement.setInt(3,countryId);
             int rowsAffected = statement.executeUpdate();
             return rowsAffected;
         } catch (SQLException e) {

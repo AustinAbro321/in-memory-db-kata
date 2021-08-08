@@ -28,9 +28,9 @@ public class CarDbTest {
     }
     
     @Test
-    public void testInsertPerson(){
+    public void testInsertPerson(){   
         int expected = 1;
-        int actual = CarDb.insertPerson(11,"Levi Ackerman","LeviAckerman@gmail.com",4);            
+        int actual = CarDb.insertPerson("Levi Ackerman","LeviAckerman@gmail.com",4);            
         assertEquals(expected, actual);
     }
 

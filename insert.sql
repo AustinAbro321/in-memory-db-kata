@@ -1,6 +1,6 @@
 insert into countries (id,abbreviation,name) 
 values(1,'USA','United States of America'),
-(2,'NOR','Norway'),
+(2,'JAP','Japan'),
 (3,'SWE','Sweden'),
 (4,'PAR','Paradis');
 insert into cars(id,car_name,year) values
@@ -11,9 +11,9 @@ insert into cars(id,car_name,year) values
 (5,'FIAT 124 Spider',2100),
 (6,'Chrysler 300',2003),
 (7,'Alfa Romeo Giulia',2021);
-insert into people(ID,full_name,email,country_id) values
+insert into people(id,full_name,email,country_id) values
 (1,'Austin Abro','AustinAbro321@gmail.com',1),
-(2,'Satoru Gojo','Satoru.Gojo@jjk.org',1),
+(2,'Satoru Gojo','Satoru.Gojo@jjk.org',2),
 (3,'Jackie Chan',null,1),
 (4,'Barry Bonds',null,2),
 (5,'Bjarne Stroustrup',null,3),
