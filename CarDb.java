@@ -49,10 +49,25 @@ public class CarDb {
     public static String getPersonName(int id) {
         String querySql = "select full_name from people where id = ?;";
         try (Connection connection = DriverManager.getConnection(connectionString);
-             PreparedStatement statement = connection.prepareStatement(querySql);) {
-            statement.setInt(1,id);
-            ResultSet resultSet = statement.executeQuery();
+             PreparedStatement preparedStatement = connection.prepareStatement(querySql);) {
+            preparedStatement.setInt(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
             return resultSet.getString("full_name");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    public static int insertPerson(int personId,String name,String email,int countryId) {
+        String querySql = "insert into people(ID,full_name,email,country_id) values (?,?,?,?)";
+        try (Connection connection = DriverManager.getConnection(connectionString);
+             PreparedStatement statement = connection.prepareStatement(querySql);) {
+            statement.setInt(1,personId);
+            statement.setString(2,name);
+            statement.setString(3,email);
+            statement.setInt(4,countryId);
+            int rowsAffected = statement.executeUpdate();
+            return rowsAffected;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

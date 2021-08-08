@@ -26,5 +26,12 @@ public class CarDbTest {
         String actual = CarDb.getPersonName(1);
         assertEquals(expected, actual);
     }
+    
+    @Test
+    public void testInsertPerson(){
+        int expected = 1;
+        int actual = CarDb.insertPerson(11,"Levi Ackerman","LeviAckerman@gmail.com",4);            
+        assertEquals(expected, actual);
+    }
 
 }
