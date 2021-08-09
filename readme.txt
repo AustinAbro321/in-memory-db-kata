@@ -8,5 +8,5 @@ Here are the requirements for your application
 5. get the full name of the person who was sold the car given the vin
 6. get the count of cars sold with the name Jeep Cherokee 
 7. get a list of all not null emails in the system 
-8. get the number of sales to residents from norway on 3/26/2021
+8. get the number of sales to residents from Japan on 3/26/2021
 9. get the total number of sales by country (return could be a map with country as the key and count as the value) 
