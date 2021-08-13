@@ -14,14 +14,14 @@ public class CarDbTest {
     }
     
     @Test
-    public void checkPersonNameByQuery(){
+    public void testGetPersonNameByQuery(){
         String expected = "Austin Abro";
         String actual = CarDb.getPersonName();
         assertEquals(expected, actual);
     }
     
     @Test
-    public void checkPersonNameById(){
+    public void testGetPersonNameById(){
         String expected = "Austin Abro";
         String actual = CarDb.getPersonName(1);
         assertEquals(expected, actual);

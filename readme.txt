@@ -1,4 +1,4 @@
-You are creating an application to create and track sales from users. 
+You have an application to track sales from users. You are implementing the database layer
 
 Here are the requirements for your application
 1. get the name of the car with the given ID 
